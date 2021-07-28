@@ -6,10 +6,11 @@ import androidx.lifecycle.ViewModel
 class MainViewModel : ViewModel() {
 
     private var count = 11
-    private val list = mutableListOf(1,2,3,4,5,6,7,8,9,10)
+    private val list = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
     private val dataList = MutableLiveData<MutableList<Int>>()
 
-    val data get () = dataList
+    val data get() = dataList
+
     init {
         populateList()
     }
@@ -18,7 +19,7 @@ class MainViewModel : ViewModel() {
         dataList.value = list
     }
 
-    fun addNum(){
+    fun addNum() {
         list.add(count)
         dataList.value = list
         count += 1
